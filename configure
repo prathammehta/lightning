@@ -144,9 +144,15 @@ if [ -z "$VALGRIND" ]; then
     fi
 fi
 
-if [ "$CC-$ASAN" = "clang-1" ]; then
-    echo "Address sanitizer (ASAN) is currently not supported with clang"
-    exit 1
+if [ "$ASAN" = "1" ]; then
+    if [ "$CC" != "gcc" ] && [ "$CC" != "cc" ]; then
+	echo "Address sanitizer (ASAN) is currently only supported with gcc"
+	exit 1
+    fi
+    if [ "$VALGRIND" = "1" ]; then
+	echo "Address sanitizer (ASAN) and valgrind cannot be enabled at the same time"
+	exit 1
+    fi
 fi
 
 rm -f $CONFIG_VAR_FILE.$$
