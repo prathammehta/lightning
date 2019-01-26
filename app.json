@@ -1,6 +1,5 @@
 {
 	"name":"heroku-c-lightning-bitcoind",
 	"description":"A heroku single click deployment of c-lightning and bitcoind",
-	"image":"elementsproject/lightningd",
-	"stack":"container"
+	"repository":"https://github.com/prathammehta/lightning"
 }
