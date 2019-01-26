@@ -1,5 +1,10 @@
 {
 	"name":"heroku-c-lightning-bitcoind",
 	"description":"A heroku single click deployment of c-lightning and bitcoind",
+	"buildpacks":[
+		{
+			"url":"https://github.com/atris/heroku-buildpack-C.git"
+		}
+	],
 	"repository":"https://github.com/prathammehta/lightning"
 }
