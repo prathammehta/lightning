@@ -1,0 +1,12 @@
+build:
+	docker:
+		lightning: Dockerfile
+	config:
+		BITCOIN_EXTRA_ARGS: |
+			testnet=1
+			whitelist=0.0.0.0/0
+			server=1
+			rpcuser=rpcuser
+			rpcpassword=rpcpass
+run:
+	lightning: ./entrypoint.sh

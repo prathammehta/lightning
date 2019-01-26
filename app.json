@@ -1,0 +1,6 @@
+{
+	"name":"heroku-c-lightning-bitcoind",
+	"description":"A heroku single click deployment of c-lightning and bitcoind",
+	"repository":"https://github.com/prathammehta/lightning",
+	"stack":"container"
+}
