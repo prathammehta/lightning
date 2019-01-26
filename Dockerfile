@@ -59,6 +59,8 @@ WORKDIR /opt/lightningd
 COPY . .
 
 ARG DEVELOPER=0
+RUN apk add --no-cache \
+     git
 RUN ./configure && make -j3 DEVELOPER=${DEVELOPER} && cp lightningd/lightning* cli/lightning-cli /usr/bin/
 
 FROM alpine:3.7
